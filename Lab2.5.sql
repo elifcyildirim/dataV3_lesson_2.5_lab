@@ -6,8 +6,7 @@ SELECT * FROM sakila.actor
 WHERE first_name= 'Scarlett';
 
 -- Q2 How many films (movies) are available for rent and how many films have been rented?
-SELECT COUNT(*) AS 'no of available films' FROM sakila.rental
-WHERE NOT return_date LIKE ' '; -- alternative: WHERE return_date is not null;
+SELECT COUNT(inventory_id)  AS 'no of films in the inventory' FROM sakila.inventory;
 
 SELECT COUNT(*) AS 'no of films that are currentl rented' FROM sakila.rental
 WHERE return_date is null;
